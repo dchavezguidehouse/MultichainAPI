@@ -13,8 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
 
 
