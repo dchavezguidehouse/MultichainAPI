@@ -1,6 +1,6 @@
 using System;
 
-namespace MultichainAPI
+namespace MultichainAPI.Models
 {
     public class WeatherForecast
     {
