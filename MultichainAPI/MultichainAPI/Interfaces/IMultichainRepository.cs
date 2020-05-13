@@ -8,6 +8,7 @@ namespace MultichainAPI.Interfaces
 {
     public interface IMultichainRepository
     {
-        Task<JsonRPCResponse<MultichainInfoModel>> GetInfo();
+        Task<JsonRPCResponse<MultichainInfoReturnModel>> GetInfo();
+        Task<JsonRPCResponse<string>> IssueAsset(IssueAssetRequestModel issueAssetRequestModel);
     }
 }

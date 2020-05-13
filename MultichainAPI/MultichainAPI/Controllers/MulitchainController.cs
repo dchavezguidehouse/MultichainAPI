@@ -18,10 +18,18 @@ namespace MultichainAPI.Controllers
         }
 
         [HttpGet("Info", Name = "Get_Info")]
-        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(JsonRPCResponse<MultichainInfoModel>))]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(JsonRPCResponse<MultichainInfoReturnModel>))]
         public async Task<ActionResult> GetInfo()
         {
             var result = await _multichainRepository.GetInfo();
+            return Ok(result);
+        }
+
+        [HttpPost("IssueAsset", Name = "Issue_Asset")]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(string))]
+        public async Task<ActionResult> QueryTransactionData([FromBody] IssueAssetRequestModel body)
+        {
+            var result = await _multichainRepository.IssueAsset(body);
             return Ok(result);
         }
     }

@@ -15,9 +15,19 @@ namespace MultichainAPI.Data
             _config = config;
         }
 
-        public async Task<JsonRPCResponse<MultichainInfoModel>> GetInfo()
+        public async Task<JsonRPCResponse<MultichainInfoReturnModel>> GetInfo()
         {
-            return await Util.GetRPCResponse<MultichainInfoModel>("getinfo", new object[0]);
+            return await Util.GetRPCResponse<MultichainInfoReturnModel>("getinfo", new object[0]);
+        }
+
+        public async Task<JsonRPCResponse<string>> IssueAsset(IssueAssetRequestModel issueAssetRequestModel)
+        {
+            return await Util.GetRPCResponse<string>("issue", new object[] 
+            {
+                issueAssetRequestModel.Address,
+                issueAssetRequestModel.AssetName,
+                issueAssetRequestModel.Quantity
+            });
         }
     }
 }

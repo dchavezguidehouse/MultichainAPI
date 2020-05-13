@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace MultichainAPI.Models
 {
-    public class MultichainInfoModel
+    public class MultichainInfoReturnModel
     {
         [JsonProperty("version")]
         public string Version { get; set; }

@@ -44,12 +44,12 @@ namespace MultichainAPI.Common
                 string jsonRet = null;
                 JsonRPCResponse<T> jsonRPCResponse = null;
 
-                using (var client = Util.GetHttpClientWithBasicAuth("http://192.168.99.105:7358", "multichainrpc", "EFELF94ofgXRbaCezUn1RSHLARnN5LTsEADFXEyFV7Gu"))
+                using (var client = Util.GetHttpClientWithBasicAuth("http://168.62.59.77:4364", "multichainrpc", "Fo2tQwo1ms6rC5RY3M1BHuuzE9a8yJsaZjHCaPA68BDD"))
                 {
                     var request = new HttpRequestMessage
                     {
                         Method = HttpMethod.Post,
-                        RequestUri = new Uri("http://192.168.99.105:7358"),
+                        RequestUri = new Uri("http://168.62.59.77:4364"),
                         Content = new StringContent(jsonRPCRequestString, Encoding.UTF8, "application/json-rpc")
                     };
 
